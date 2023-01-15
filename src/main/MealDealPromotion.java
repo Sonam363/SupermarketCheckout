@@ -2,8 +2,9 @@ package main;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
-public class MealDealPromotion {
+public class MealDealPromotion implements Promotion {
 
     public Map<String, Integer> itemToPriceMap;
     public int totalPricePerDeal;
@@ -31,5 +32,13 @@ public class MealDealPromotion {
         int deductionAmount = originalPrice - totalPricePerDeal;
 
         return smallestValue * deductionAmount;
+    }
+
+    @Override
+    public void describe() {
+        Set<String> items = itemToPriceMap.keySet();
+        StringBuilder builder = new StringBuilder();
+        for (String item : items) builder.append(item).append(",");
+        System.out.println(String.format("Meal deal: items %s for just %s", builder.toString(), totalPricePerDeal));
     }
 }

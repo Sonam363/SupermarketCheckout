@@ -21,4 +21,9 @@ public class MultibuyPromotion implements Promotion {
 
         return (itemsScanned/quantityNeeded) * deductionAmount;
     }
+
+    @Override
+    public void describe() {
+        System.out.println(String.format("Get %s of %s for just %s", quantityNeeded, itemSKU, promotionalPrice));
+    }
 }
