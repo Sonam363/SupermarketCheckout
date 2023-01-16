@@ -6,7 +6,7 @@ import java.util.Map;
 public class PromotionList {
     public static HashMap<String, Promotion> itemPromotionMap = new HashMap<>();
 
-    static{
+    static {
         Map<String, Integer> itemToPriceMap = new HashMap<>();
         itemToPriceMap.put("D", 150);
         itemToPriceMap.put("E", 200);

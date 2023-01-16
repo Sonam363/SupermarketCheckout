@@ -10,7 +10,7 @@ public class Scanner {
     public static PromotionList promotions;
 
     public Scanner(PromotionList promotions) {
-        this.promotions = promotions;
+        Scanner.promotions = promotions;
     }
 
     public int scan(List<String> itemsToScan) {
@@ -22,9 +22,9 @@ public class Scanner {
         Map<String, Integer> itemCount = new HashMap<>();
         System.out.println("Items being scanned: ");
 
-        for(String item : itemsToScan) {
+        for (String item : itemsToScan) {
             System.out.println(item);
-            if(!itemPriceMap.containsKey(item)) {
+            if (!itemPriceMap.containsKey(item)) {
                 System.out.println("Invalid item scanned, please call the manager!");
                 continue;
             }
@@ -37,11 +37,11 @@ public class Scanner {
     }
 
     private int calculateTotal(Map<String, Integer> itemCount, PromotionList promotions, int runningTotal) {
-        HashMap<String, Promotion> itemPromotionMap = promotions.itemPromotionMap;
-        for(String item : itemPromotionMap.keySet()) {
-            if(itemCount.containsKey(item)) {
+        HashMap<String, Promotion> itemPromotionMap = PromotionList.itemPromotionMap;
+        for (String item : itemPromotionMap.keySet()) {
+            if (itemCount.containsKey(item)) {
                 Promotion promotion = itemPromotionMap.get(item);
-                if(promotion instanceof MealDealPromotion) {
+                if (promotion instanceof MealDealPromotion) {
                     runningTotal -= promotion.calculatePromotion(getMealDealCount(itemCount, (MealDealPromotion) promotion));
                 } else {
                     runningTotal -= promotion.calculatePromotion(itemCount.get(item));
@@ -57,8 +57,8 @@ public class Scanner {
         int smallestValue = Integer.MAX_VALUE;
         // check if all items needed for meal deal are present
         Set<String> mealDealItems = promotion.itemToPriceMap.keySet();
-        for(String item : mealDealItems) {
-            if(!itemToQuantityMap.containsKey(item)) {
+        for (String item : mealDealItems) {
+            if (!itemToQuantityMap.containsKey(item)) {
                 return 0; // doesn't meet promotion criteria
             } else {
                 if (itemToQuantityMap.get(item) < smallestValue) {

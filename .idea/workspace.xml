@@ -269,7 +269,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ScannerTest.noPromotionsAppliedTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="SupermarketCheckout" />
@@ -292,21 +292,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PromotionsTest.mealDealPromotionNotApplicableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SupermarketCheckout" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PromotionsTest" />
-      <option name="METHOD_NAME" value="mealDealPromotionNotApplicableTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ScannerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SupermarketCheckout" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ScannerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScannerTest.noPromotionsAppliedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SupermarketCheckout" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ScannerTest" />
+      <option name="METHOD_NAME" value="noPromotionsAppliedTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -323,18 +323,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PromotionsTest" />
-      <item itemvalue="JUnit.PromotionsTest.mealDealPromotionNotApplicableTest" />
       <item itemvalue="JUnit.ScannerTest.scannerTest" />
       <item itemvalue="JUnit.ScannerTest" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ScannerTest.noPromotionsAppliedTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ScannerTest.noPromotionsAppliedTest" />
         <item itemvalue="JUnit.ScannerTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ScannerTest.scannerTest" />
         <item itemvalue="JUnit.PromotionsTest" />
-        <item itemvalue="JUnit.PromotionsTest.mealDealPromotionNotApplicableTest" />
       </list>
     </recent_temporary>
   </component>

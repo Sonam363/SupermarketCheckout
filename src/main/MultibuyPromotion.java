@@ -19,7 +19,7 @@ public class MultibuyPromotion implements Promotion {
         int originalPrice = quantityNeeded * pricePerUnit;
         int deductionAmount = originalPrice - promotionalPrice;
 
-        return (itemsScanned/quantityNeeded) * deductionAmount;
+        return (itemsScanned / quantityNeeded) * deductionAmount;
     }
 
     @Override

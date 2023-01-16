@@ -16,11 +16,11 @@ public class GetOneFreePromotion implements Promotion {
     public int calculatePromotion(int itemsScanned) {
         int deductionAmount = pricePerUnit;
 
-        return (itemsScanned/quantityNeeded) * deductionAmount;
+        return (itemsScanned / quantityNeeded) * deductionAmount;
     }
 
     @Override
     public void describe() {
-        System.out.println(String.format("Buy %s %s get 1 free", quantityNeeded-1, itemSKU));
+        System.out.println(String.format("Buy %s %s get 1 free", quantityNeeded - 1, itemSKU));
     }
 }
