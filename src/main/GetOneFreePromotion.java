@@ -21,6 +21,6 @@ public class GetOneFreePromotion implements Promotion {
 
     @Override
     public void describe() {
-        System.out.println(String.format("Buy %s get 1 free", quantityNeeded-1));
+        System.out.println(String.format("Buy %s %s get 1 free", quantityNeeded-1, itemSKU));
     }
 }

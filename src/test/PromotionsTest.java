@@ -39,6 +39,20 @@ class PromotionsTest {
     }
 
     @Test
+    public void multibuyPromotionNotApplicableTest(){
+        int pricePerUnit = 100;
+        int promotionalPrice = 110;
+        int itemsScanned = 1;
+
+        MultibuyPromotion mp = new MultibuyPromotion("B", 2, pricePerUnit, promotionalPrice);
+        int amountToDeduct = mp.calculatePromotion(itemsScanned);
+        int totalPrice = itemsScanned*pricePerUnit;
+
+        assertEquals(amountToDeduct, 0);
+        assertEquals(totalPrice-amountToDeduct, 100);
+    }
+
+    @Test
     public void applyGetOneFreePromotionTest(){
         int pricePerUnit = 100;
         int itemsScanned = 10;
@@ -50,6 +64,20 @@ class PromotionsTest {
 
         assertEquals(amountToDeduct, 200);
         assertEquals(totalPrice-amountToDeduct, 800);
+    }
+
+    @Test
+    public void getOneFreePromotionNotApplicableTest(){
+        int pricePerUnit = 100;
+        int itemsScanned = 3;
+        int quantityNeeded = 4;
+
+        GetOneFreePromotion p = new GetOneFreePromotion("B", quantityNeeded, pricePerUnit);
+        int amountToDeduct = p.calculatePromotion(itemsScanned);
+        int totalPrice = itemsScanned*pricePerUnit;
+
+        assertEquals(amountToDeduct, 0);
+        assertEquals(totalPrice-amountToDeduct, 300);
     }
 
     @Test
@@ -67,5 +95,22 @@ class PromotionsTest {
 
         assertEquals(amountToDeduct, 100);
         assertEquals(totalPrice, 800);
+    }
+
+    @Test
+    public void mealDealPromotionNotApplicableTest(){
+        Map<String, Integer> itemToPriceMap = new HashMap<>();
+        itemToPriceMap.put("D", 150);
+        itemToPriceMap.put("E", 200);
+        MealDealPromotion p = new MealDealPromotion(itemToPriceMap, 300);
+
+        int numberOfMealDeals = 0;
+        int quantityOfItemD = 2;
+        int quantityOfItemE = 3;
+        int amountToDeduct = p.calculatePromotion(numberOfMealDeals);
+        int totalPrice = (quantityOfItemD * itemToPriceMap.get("D")) + (quantityOfItemE * itemToPriceMap.get("E")) - amountToDeduct;
+
+        assertEquals(amountToDeduct, 0);
+        assertEquals(totalPrice, 900);
     }
 }

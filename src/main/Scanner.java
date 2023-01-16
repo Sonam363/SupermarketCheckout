@@ -44,6 +44,7 @@ public class Scanner {
                 }
             }
         }
+        System.out.println(String.format("Total cost of items: %s", runningTotal));
         return runningTotal;
     }
 
@@ -53,7 +54,7 @@ public class Scanner {
         // check if all items needed for meal deal are present
         Set<String> mealDealItems = promotion.itemToPriceMap.keySet();
         for(String item : mealDealItems) {
-            if(!itemToQuantityMap.containsValue(item)) {
+            if(!itemToQuantityMap.containsKey(item)) {
                 return 0; // doesn't meet promotion criteria
             } else {
                 if (itemToQuantityMap.get(item) < smallestValue) {

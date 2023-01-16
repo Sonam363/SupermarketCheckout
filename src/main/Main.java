@@ -13,6 +13,4 @@ public class Main {
         Scanner scanner = new Scanner(new PromotionList());
         scanner.scan(itemsToScan);
     }
-
-    // edge cases - items thatt dontt have a sku, empty list of items,
 }
