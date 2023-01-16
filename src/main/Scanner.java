@@ -13,7 +13,7 @@ public class Scanner {
         Scanner.promotions = promotions;
     }
 
-    public int scan(List<String> itemsToScan) {
+    public double scan(List<String> itemsToScan) {
         // scan all items and create a running total
         // track the number of each item that a promotion applies to
         int runningTotal = 0;
@@ -36,7 +36,7 @@ public class Scanner {
         return calculateTotal(itemCount, promotions, runningTotal);
     }
 
-    private int calculateTotal(Map<String, Integer> itemCount, PromotionList promotions, int runningTotal) {
+    private double calculateTotal(Map<String, Integer> itemCount, PromotionList promotions, int runningTotal) {
         HashMap<String, Promotion> itemPromotionMap = PromotionList.itemPromotionMap;
         for (String item : itemPromotionMap.keySet()) {
             if (itemCount.containsKey(item)) {
@@ -48,8 +48,14 @@ public class Scanner {
                 }
             }
         }
-        System.out.println(String.format("Total cost of items: %s", runningTotal));
-        return runningTotal;
+        double finalTotal = convertToPounds(runningTotal);
+        System.out.println(String.format("Total cost of items: £%s", finalTotal));
+        return finalTotal;
+    }
+
+    private double convertToPounds(int runningTotal) {
+        double finalTotal = (double) runningTotal;
+        return finalTotal/100;
     }
 
     private int getMealDealCount(Map<String, Integer> itemToQuantityMap, MealDealPromotion promotion) {

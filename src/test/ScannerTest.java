@@ -13,18 +13,18 @@ class ScannerTest {
     public void allPromotionsAppliedTest() {
         List<String> itemsToScan = Arrays.asList("A", "D", "D", "E", "E", "B", "B", "C", "C", "C", "C");
         Scanner scanner = new Scanner(new PromotionList());
-        int finalTotal = scanner.scan(itemsToScan);
+        double finalTotal = scanner.scan(itemsToScan);
 
         // scanner should apply one multibuy promotion, two meal deals, and one get one free promotion
-        assertEquals(850, finalTotal);
+        assertEquals(8.5, finalTotal);
     }
 
     @Test
     public void noPromotionsAppliedTest() {
         List<String> itemsToScan = Arrays.asList("A", "B", "C", "D", "D");
         Scanner scanner = new Scanner(new PromotionList());
-        int finalTotal = scanner.scan(itemsToScan);
+        double finalTotal = scanner.scan(itemsToScan);
 
-        assertEquals(450, finalTotal);
+        assertEquals(4.5, finalTotal);
     }
 }
