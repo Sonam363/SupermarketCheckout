@@ -20,8 +20,8 @@ class PromotionsTest {
         int amountToDeduct = mp.calculatePromotion(itemsScanned);
         int totalPrice = itemsScanned*pricePerUnit;
 
-        assertEquals(amountToDeduct, 75);
-        assertEquals(totalPrice-amountToDeduct, 375);
+        assertEquals(75, amountToDeduct);
+        assertEquals(375, totalPrice-amountToDeduct);
     }
 
     @Test
@@ -34,8 +34,8 @@ class PromotionsTest {
         int amountToDeduct = mp.calculatePromotion(itemsScanned);
         int totalPrice = itemsScanned*pricePerUnit;
 
-        assertEquals(amountToDeduct, 400);
-        assertEquals(totalPrice-amountToDeduct, 500);
+        assertEquals(400, amountToDeduct);
+        assertEquals(500, totalPrice-amountToDeduct);
     }
 
     @Test
@@ -48,8 +48,8 @@ class PromotionsTest {
         int amountToDeduct = mp.calculatePromotion(itemsScanned);
         int totalPrice = itemsScanned*pricePerUnit;
 
-        assertEquals(amountToDeduct, 0);
-        assertEquals(totalPrice-amountToDeduct, 100);
+        assertEquals(0, amountToDeduct);
+        assertEquals(100, totalPrice-amountToDeduct);
     }
 
     @Test
@@ -62,8 +62,8 @@ class PromotionsTest {
         int amountToDeduct = p.calculatePromotion(itemsScanned);
         int totalPrice = itemsScanned*pricePerUnit;
 
-        assertEquals(amountToDeduct, 200);
-        assertEquals(totalPrice-amountToDeduct, 800);
+        assertEquals(200, amountToDeduct);
+        assertEquals(800, totalPrice-amountToDeduct);
     }
 
     @Test
@@ -76,8 +76,8 @@ class PromotionsTest {
         int amountToDeduct = p.calculatePromotion(itemsScanned);
         int totalPrice = itemsScanned*pricePerUnit;
 
-        assertEquals(amountToDeduct, 0);
-        assertEquals(totalPrice-amountToDeduct, 300);
+        assertEquals(0, amountToDeduct);
+        assertEquals(300, totalPrice-amountToDeduct);
     }
 
     @Test
@@ -93,8 +93,8 @@ class PromotionsTest {
         int amountToDeduct = p.calculatePromotion(numberOfMealDeals);
         int totalPrice = (quantityOfItemD * itemToPriceMap.get("D")) + (quantityOfItemE * itemToPriceMap.get("E")) - amountToDeduct;
 
-        assertEquals(amountToDeduct, 100);
-        assertEquals(totalPrice, 800);
+        assertEquals(100, amountToDeduct);
+        assertEquals(800, totalPrice);
     }
 
     @Test
@@ -110,7 +110,7 @@ class PromotionsTest {
         int amountToDeduct = p.calculatePromotion(numberOfMealDeals);
         int totalPrice = (quantityOfItemD * itemToPriceMap.get("D")) + (quantityOfItemE * itemToPriceMap.get("E")) - amountToDeduct;
 
-        assertEquals(amountToDeduct, 0);
-        assertEquals(totalPrice, 900);
+        assertEquals(0, amountToDeduct);
+        assertEquals(900, totalPrice);
     }
 }

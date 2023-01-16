@@ -24,6 +24,10 @@ public class Scanner {
 
         for(String item : itemsToScan) {
             System.out.println(item);
+            if(!itemPriceMap.containsKey(item)) {
+                System.out.println("Invalid item scanned, please call the manager!");
+                continue;
+            }
             int count = itemCount.containsKey(item) ? itemCount.get(item) : 0;
             itemCount.put(item, count + 1);
             runningTotal += itemPriceMap.get(item);
