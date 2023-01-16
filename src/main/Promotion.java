@@ -1,5 +1,8 @@
 package main;
 
 public interface Promotion {
-    public void describe();
+    void describe();
+
+    int calculatePromotion(int itemsScanned);
+
 }

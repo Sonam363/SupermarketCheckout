@@ -59,20 +59,13 @@ class PromotionsTest {
         itemToPriceMap.put("E", 200);
         MealDealPromotion p = new MealDealPromotion(itemToPriceMap, 300);
 
-        Map<String, Integer> itemToQuantityMap = new HashMap<>();
-        itemToQuantityMap.put("D", 3);
-        itemToQuantityMap.put("E", 2);
-
-        int amountToDeduct = p.calculatePromotion(itemToQuantityMap);
-        int totalPrice = 0;
-        for (HashMap.Entry<String, Integer> entry : itemToQuantityMap.entrySet()) {
-            String itemSKU = entry.getKey();
-            int quantity = entry.getValue();
-            int priceForItem = itemToPriceMap.get(itemSKU);
-            totalPrice += priceForItem*quantity;
-        }
+        int numberOfMealDeals = 2;
+        int quantityOfItemD = 2;
+        int quantityOfItemE = 3;
+        int amountToDeduct = p.calculatePromotion(numberOfMealDeals);
+        int totalPrice = (quantityOfItemD * itemToPriceMap.get("D")) + (quantityOfItemE * itemToPriceMap.get("E")) - amountToDeduct;
 
         assertEquals(amountToDeduct, 100);
-        assertEquals(totalPrice-amountToDeduct, 750);
+        assertEquals(totalPrice, 800);
     }
 }

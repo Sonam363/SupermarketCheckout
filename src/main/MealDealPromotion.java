@@ -15,14 +15,7 @@ public class MealDealPromotion implements Promotion {
     }
 
     // return amount to be deducted
-    public int calculatePromotion(Map<String, Integer> itemToQuantityMap) {
-        // smallest value = number of complete meal deals
-        int smallestValue = Integer.MAX_VALUE;
-        for (HashMap.Entry<String, Integer> entry : itemToQuantityMap.entrySet()) {
-            if (entry.getValue() < smallestValue) {
-                smallestValue = entry.getValue();
-            }
-        }
+    public int calculatePromotion(int numberOfMealDeals) {
         // original price = sum of individual products in the deal before discount
         int originalPrice = 0;
         for (HashMap.Entry<String, Integer> entry : itemToPriceMap.entrySet()) {
@@ -31,7 +24,7 @@ public class MealDealPromotion implements Promotion {
 
         int deductionAmount = originalPrice - totalPricePerDeal;
 
-        return smallestValue * deductionAmount;
+        return numberOfMealDeals * deductionAmount;
     }
 
     @Override
